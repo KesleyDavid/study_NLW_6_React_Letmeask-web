@@ -88,5 +88,10 @@ export const Info = styled.p`
 
   a {
     color: var(--pink-dark);
+    margin-left: 5px;
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--pink-light);
   }
 `;
