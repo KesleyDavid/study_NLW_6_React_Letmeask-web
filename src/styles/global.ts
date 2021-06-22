@@ -28,8 +28,8 @@ export default createGlobalStyle`
     --gray-light-hover: #CECECE;
 
     --white: #FFF;
-    --white-background: #F8F8F8;
-    --white-details: #FEFEFE;
+    --white-background: #FEFEFE;
+    --white-details: #F8F8F8;
 
     --pink-dark: #E559F9;
     --pink-light: #D67EE2;
@@ -56,6 +56,10 @@ export default createGlobalStyle`
     font: 400 1rem 'Roboto', sans-serif;
   }
 
+  button {
+    cursor: pointer;
+  }
+  
   /* a {
     color: inherit;
     text-decoration: none;

@@ -2,23 +2,25 @@ import imgIllustration from '../../assets/images/illustration.svg';
 import imgLogo from '../../assets/images/logo.svg';
 import imgGoogleIcon from '../../assets/images/google-icon.svg';
 
+import { Container, Content, Form, Logo, Separator } from './styles';
+
 export default function Home() {
   return (
-    <div>
+    <Container>
       <aside>
         <img src={imgIllustration} alt="Ilustração simbolizando perguntas e respostas" />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo-real</p>
       </aside>
       <main>
-        <div>
-          <img src={imgLogo} alt="Letmeask" />
+        <Content>
+          <Logo src={imgLogo} alt="Letmeask" />
           <button>
             <img src={imgGoogleIcon} alt="Logo do Google" />
             Crie sua sala com o Google
           </button>
-          <div>ou entre em uma sala</div>
-          <form>
+          <Separator>ou entre em uma sala</Separator>
+          <Form>
             <input
               type="text" 
               placeholder="Digite o código da sala"
@@ -26,9 +28,9 @@ export default function Home() {
             <button type="submit">
               Entrar na sala
             </button>
-          </form>
-        </div>
+          </Form>
+        </Content>
       </main>
-    </div>
+    </Container>
   )
 }
