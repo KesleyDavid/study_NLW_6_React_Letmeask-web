@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import imgIllustration from '../../assets/images/illustration.svg';
-import imgLogo from '../../assets/images/logo.svg';
+import { useAuth } from '../../hooks/useAuth';
 
 import { Button } from '../../components/Button';
+
+import imgIllustration from '../../assets/images/illustration.svg';
+import imgLogo from '../../assets/images/logo.svg';
 
 import { Container, Content, Title, Form, Logo, Info } from './styles';
 
 export default function NewRoom() {
+  const { user } = useAuth();
+
   return (
     <Container>
       <aside>
