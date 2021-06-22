@@ -39,6 +39,8 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     });
 
     return () => {
+      // parar de ficar ouvindo
+      // Descadastrar de todos event listener que se cadastrou
       unsubscribe();
     }
   }, [])

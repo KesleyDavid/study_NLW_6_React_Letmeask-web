@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/useAuth';
 
@@ -8,9 +9,18 @@ import imgIllustration from '../../assets/images/illustration.svg';
 import imgLogo from '../../assets/images/logo.svg';
 
 import { Container, Content, Title, Form, Logo, Info } from './styles';
+import { useEffect } from 'react';
 
 export default function NewRoom() {
+  const history = useHistory();
   const { user } = useAuth();
+
+
+  useEffect(() => {
+    if (!user) {
+      history.push('/');
+    }
+  }, [user,history]);
 
   return (
     <Container>
