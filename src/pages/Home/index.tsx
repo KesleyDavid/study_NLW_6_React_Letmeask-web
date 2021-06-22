@@ -6,13 +6,25 @@ import imgGoogleIcon from '../../assets/images/google-icon.svg';
 
 import { Button } from '../../components/Button';
 
+import { auth, firebase } from '../../services/firebase';
+
 import { Container, Content, Form, Logo, Separator } from './styles';
 
 export default function Home() {
   const history = useHistory();
   
-  function navigateToNewRoom(){
-    history.push('/rooms/new');
+  function handleCreateRoom(){
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    // Abrir login como popup
+    auth.signInWithPopup(provider).then( result => {
+      // Após usuário fazer login
+      console.log(result);
+      
+      history.push('/rooms/new');
+    });
+
+
   }
 
   return (
@@ -25,7 +37,7 @@ export default function Home() {
       <main>
         <Content>
           <Logo src={imgLogo} alt="Letmeask" />
-          <Button color="social" onClick={navigateToNewRoom}>
+          <Button color="social" onClick={handleCreateRoom}>
             <img src={imgGoogleIcon} alt="Logo do Google" />
             Crie sua sala com o Google
           </Button>
