@@ -1,8 +1,8 @@
-import imgIllustration from '../assets/images/illustration.svg';
-import imgLogo from '../assets/images/logo.svg';
-import imgGoogleIcon from '../assets/images/google-icon.svg';
+import imgIllustration from '../../assets/images/illustration.svg';
+import imgLogo from '../../assets/images/logo.svg';
+import imgGoogleIcon from '../../assets/images/google-icon.svg';
 
-export function Home() {
+export default function Home() {
   return (
     <div>
       <aside>
