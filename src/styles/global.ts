@@ -19,7 +19,7 @@ export default createGlobalStyle`
     --danger: #E73F5D;
     --danger-hover: #D73754;
 
-    --green: #04D361;
+    --success: #04D361;
 
     --gray-dark: #737380;
     --gray-medium: #A8A8B3;
