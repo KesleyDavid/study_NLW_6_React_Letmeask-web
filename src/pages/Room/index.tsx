@@ -52,7 +52,7 @@ export default function Room() {
 
     // once => uma consulta
     // on => realtime
-    roomRef.once('value', room => {
+    roomRef.on('value', room => {
       const databaseRoom = room.val();
       // const firebaseQuestions = databaseRoom.questions as FirebaseQuestions;
       const firebaseQuestions: FirebaseQuestions = databaseRoom.questions  ?? {};
