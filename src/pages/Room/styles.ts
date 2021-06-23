@@ -80,3 +80,21 @@ export const Form = styled.form`
     }
   }
 `;
+
+export const UserInfo = styled.div`
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  span {
+    margin-left: 8px;
+    color: var(--black);
+    font-weight: 500;
+    font-size: 0.87rem;
+  }
+`;

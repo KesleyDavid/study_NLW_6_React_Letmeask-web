@@ -9,7 +9,7 @@ import imgLogo from '../../assets/images/logo.svg';
 import { Button } from '../../components/Button';
 import { RoomCode } from '../../components/RoomCode';
 
-import { Container, Content, Title, Form } from './styles';
+import { Container, Content, Title, Form, UserInfo } from './styles';
 
 type RoomParams = {
   id: string;
@@ -46,6 +46,8 @@ export default function Room() {
     }
     
     await database.ref(`rooms/${roomId}/questions`).push(question);
+
+    setNewQuestion('');
   }
 
   return (
@@ -69,7 +71,14 @@ export default function Room() {
             value={newQuestion}
           />
           <div>
-            <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+            { user ? (
+              <UserInfo>
+                <img src={user.avatar} alt={user.name} />
+                <span>{user.name}</span>
+              </UserInfo>
+            ) : (
+              <span>Para enviar uma pergunta, <button>faça seu login</button>.</span>
+            )}
             <Button type="submit" disabled={!user}>Enviar pergunta</Button>
           </div>
         </Form>
